@@ -1,0 +1,19 @@
+import logging
+from aiogram import Bot, Dispatcher, types, executor
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from config import TOKEN
+
+logging.basicConfig(level=logging.INFO)
+
+bot = Bot(token=TOKEN)
+dp = Dispatcher(bot, storage=MemoryStorage())
+
+# Start handler
+@dp.message_handler(commands=['start'])
+async def start_handler(message: types.Message):
+    await message.answer("Til o‘rgatuvchi botga xush kelibsiz!\nIltimos, tilni tanlang:\n1. O'zbek\n2. Русский\n3. English")
+
+# Add more handlers here for language selection and levels
+
+if __name__ == '__main__':
+    executor.start_polling(dp, skip_updates=True)

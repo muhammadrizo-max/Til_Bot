@@ -1,2 +1,2 @@
-# Til_Bot
-TelegramTilBot
+# Xizmatlar_Bot
+Telegramxizmatlarbot
